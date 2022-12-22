@@ -1,10 +1,9 @@
 import {createContext, useState, useMemo} from "react";
 import {createTheme} from "@mui/material/styles"
-import {fontFamily} from "@mui/system";
 
 
 const darkColors = {
-    gray: {
+    grey: {
         100: "#e0e0e0",
         200: "#c2c2c2",
         300: "#a3a3a3",
@@ -61,7 +60,7 @@ const darkColors = {
     }
 }
 const lightColors = {
-    gray: {
+    grey: {
         100: "#141414",
         200: "#292929",
         300: "#3d3d3d",
@@ -131,7 +130,7 @@ export const tokens = (mode) => (
 export const themeSettings = (mode) => {
     const colors = tokens(mode);
 
-    const darkThemePallete = {
+    const darkThemePalette = {
         primary: {
             main: colors.primary[500]
         },
@@ -148,7 +147,7 @@ export const themeSettings = (mode) => {
         }
     }
 
-    const lightThemePallete = {
+    const lightThemePalette = {
         primary: {
             main: colors.primary[100]
         },
@@ -169,7 +168,7 @@ export const themeSettings = (mode) => {
         {
             pallete: {
                 mode: mode,
-                ...colors(mode==='dark') ? darkThemePallete : lightThemePallete
+                ...(mode==='dark' ? darkThemePalette : lightThemePalette)
             },
             typography: {
                 fontFamily: ["Source Sans Pro", "sans-serif"].join(","),
@@ -207,18 +206,16 @@ export const themeSettings = (mode) => {
 
 // Context for color mode
 export const ColorModeContext = createContext({
-    toggleColorMode: () => {
-
-    }
+    toggleColorMode: () => { }
 })
 
 export const useMode = () => {
     const [mode, setMode] = useState("dark");
 
     const colorMode = useMemo(
-        () => {
+        () => ({
             toggleColorMode: () => setMode( (prev) => (prev==="light" ? "dark" : "light") )     // This is just a very compact "toggle" function between light and dark
-        },
+        }),
         []
     )
 
