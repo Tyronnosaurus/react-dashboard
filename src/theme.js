@@ -120,7 +120,7 @@ const lightColors = {
 
 // Color design tokens
 export const tokens = (mode) => (
-    {...(mode==='dark' ? darkColors : lightColors) }
+    {...(mode==="dark" ? darkColors : lightColors) }
 )
 
 
@@ -168,7 +168,7 @@ export const themeSettings = (mode) => {
         {
             pallete: {
                 mode: mode,
-                ...(mode==='dark' ? darkThemePalette : lightThemePalette)
+                ...(mode==="dark" ? darkThemePalette : lightThemePalette)
             },
             typography: {
                 fontFamily: ["Source Sans Pro", "sans-serif"].join(","),
@@ -209,8 +209,9 @@ export const ColorModeContext = createContext({
     toggleColorMode: () => { }
 })
 
+
 export const useMode = () => {
-    const [mode, setMode] = useState("dark");
+    const [mode, setMode] = useState("dark");   // Default mode is dark
 
     const colorMode = useMemo(
         () => ({
