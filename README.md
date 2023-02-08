@@ -1,5 +1,7 @@
 This is a React practice project based on [this tutorial](https://www.youtube.com/watch?v=wYpCWwD1oz0).
 
+![Final result](/Screenshot.png)
+
 ## How to use:
 
 In the project directory, you can run
