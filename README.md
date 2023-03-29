@@ -1,5 +1,7 @@
 This is a React practice project based on [this tutorial](https://www.youtube.com/watch?v=wYpCWwD1oz0).
 
+[Click here to see the deployed result](https://react-dashboard-20232903.netlify.app)
+
 ![Final result](/Screenshot.png)
 
 ## How to use:
